@@ -1,0 +1,20 @@
+@styleTitle 'Countries Background';
+@styleAbstract '';
+
+[ADM0_A3 in (
+  'SOM',
+  'SOL',
+  'ETH',
+  'KEN',
+  'UGA',
+  'DJI',
+  'ERI',
+  'SDN',
+  'SDS',
+  'TZA'
+)] {
+  fill: #0d0d0d;
+  stroke: #6e6e6e;
+  stroke-width: 2;
+  stroke-dasharray: 4;
+}

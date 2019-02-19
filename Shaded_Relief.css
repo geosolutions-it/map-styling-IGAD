@@ -1,0 +1,6 @@
+@styleTitle 'Relief';
+@styleAbstract '';
+
+[@sd > 3M] {
+  raster-channels: auto;
+}

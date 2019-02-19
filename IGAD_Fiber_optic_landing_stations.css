@@ -1,0 +1,38 @@
+@styleTitle 'Fiber Optic Landing Stations';
+@styleAbstract '';
+
+[@sd < 10M][@sd > 5M]  {
+  mark: symbol(square), symbol(square), symbol(square);
+  label: [Name];
+  label-anchor: 0.5, 0.5;
+  label-offset: 0 -26;
+  font-fill: #333333;
+  font-family: 'Noto Sans';
+  font-size: 10;
+  font-weight: bold;
+  halo-color: #ffffff;
+  halo-radius: 2;
+  halo-opacity: 0.5;
+  shield: symbol(square);
+  shield-resize: stretch;
+  shield-margin: 4;
+  :shield {
+    fill: #ffffff;
+    fill-opacity: 0.75;
+  };
+  :mark {
+    stroke: #eaeaea;
+    fill: [recode(Country,
+      'Eritrea', '#aaff33',
+      'Sudan', '#33ffaa',
+      'Republic of Djibouti', '#33aaff',
+      'Somalialand', '#0000ff',
+      'Somalia', '#aa33ff',
+      'Kenya', '#ffaaaa',
+      'Uganda', '#aaaa33'
+    )];
+    fill-opacity: 0.4;
+    stroke-width: 2, 1, 1;
+    size: 30, 20, 10;
+  };
+}

@@ -1,0 +1,74 @@
+@styleTitle 'Countries';
+@styleAbstract '';
+
+[ADM0_A3 in (
+  'SOM',
+  'SOL',
+  'ETH',
+  'KEN',
+  'UGA',
+  'DJI',
+  'ERI',
+  'SDN',
+  'SDS',
+  'TZA'
+)] {
+
+  [@sd > 20M] {
+    fill: url('file://flags/${ADM0_A3}_1x1.svg');
+    fill-mime: 'image/svg';
+    fill-size: 50;
+    graphic-margin: -2;
+  };
+  [@sd < 20M] {
+    stroke: #6f80be;
+    stroke-width: 2;
+    stroke-opacity: 0.4;
+    stroke-dasharray: 5;
+    fill: #ffffff;
+    fill-opacity: 0.2;
+    label: [NAME_EN];
+    font-fill: #333;
+    font-family: 'Noto Sans';
+    font-style: 'italic';
+    font-size: 12;
+    halo-color: #ffffff;
+    halo-radius: 1;
+    halo-opacity: 0.7;
+    [@sd > 10M] {
+      fill: #ffffff, symbol("shape://dot");
+      fill-opacity: 0.5, 1;
+      :fill {
+        size: 10;
+        stroke: #333;
+        stroke-width: 3;
+        stroke-opacity: [
+          interpolate(POP_EST,
+            2500000, 0.2,
+            100000000, 1)
+          ];
+      };
+      fill-random: grid;
+      fill-random-tile-size: 50;
+
+      [POP_EST > 2500000] {
+        fill-random-symbol-count: 10;
+      };
+      [POP_EST > 5000000] {
+        fill-random-symbol-count: 40;
+      };
+      [POP_EST > 10000000] {
+        fill-random-symbol-count: 50;
+      };
+      [POP_EST > 25000000] {
+        fill-random-symbol-count: 100;
+      };
+      [POP_EST > 50000000] {
+        fill-random-symbol-count: 500;
+      };
+      [POP_EST > 100000000] {
+        fill-random-symbol-count: 1000;
+      };
+    };
+  };
+}

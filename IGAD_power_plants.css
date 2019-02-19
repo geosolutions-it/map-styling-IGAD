@@ -1,0 +1,25 @@
+@styleTitle 'Power Plants';
+@styleAbstract '';
+
+[STATUS = 'OPR'][@sd < 10M][@sd > 5M] {
+  mark: symbol('shape://vertline'),
+    symbol('shape://vertline'),
+    symbol('shape://vertline'),
+    symbol('shape://vertline');
+  mark-offset: 0 [-1 * interpolate(SUM_MW, 0, 1, 100, 30)/2];
+  :mark {
+    stroke: #820e0e, #d03a3a, #e38989, #ffc4c4;
+    stroke-width: 15, 12, 10, 6;
+    size: [interpolate(SUM_MW, 0, 2, 100, 30)];
+  };
+  label: [PLANT];
+  label-anchor: 0.5 1.2;
+  font-size: 9;
+  font-fill: #d03a3a;
+  font-family: 'Noto Sans';
+  font-style: italic;
+  halo-color: #ffffff;
+  halo-radius: 1;
+  halo-opacity: 0.7;
+  font-weight: bold;
+}

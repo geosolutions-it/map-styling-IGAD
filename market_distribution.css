@@ -1,0 +1,24 @@
+@styleTitle 'Market Distribution';
+@styleAbstract '';
+
+[@sd < 2M] {
+  mark: symbol(square);
+  :mark {
+    stroke: [recode(Type,
+      'Primary', '#7570b3',
+      'Secondary', '#d95f02',
+      'Open bush', '#1b9e77'
+    )];
+    fill: [recode(Type,
+      'Primary', '#7570b3',
+      'Secondary', '#d95f02',
+      'Open bush', '#1b9e77'
+    )];
+    size: [recode(Type,
+      'Primary', 15,
+      'Secondary', 10,
+      'Open bush', 5
+    )];
+  };
+}
+

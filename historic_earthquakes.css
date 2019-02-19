@@ -1,0 +1,17 @@
+@styleTitle 'Historic Earthquakes';
+@styleAbstract '';
+
+* {
+  mark: symbol(circle), symbol(circle);
+  :mark {
+    stroke: [
+      interpolate(MAGNITUDE, 4, '#0ff', 7, '#f0f', 'color')
+      ], #000;
+    stroke-width: 2, 1;
+    size: [interpolate(MAGNITUDE, 4, 20, 7, 100)],
+      2;
+    stroke-opacity: [
+      interpolate(KM, 0, 0.4, 60, 1)
+      ], 1;
+  };
+}

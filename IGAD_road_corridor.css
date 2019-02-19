@@ -1,0 +1,31 @@
+@styleTitle 'Roads';
+@styleAbstract '';
+
+[Type = 'Primary road'][@sd < 5M] {
+  stroke: #ff6565;
+  stroke-width: 1;
+  [@sd < 2.5M] {
+    z-index: 0, 1;
+    stroke: #ff0808, #ffffff;
+    stroke-width: 4, 3;
+  };
+}
+
+[Type = 'Secondary road'][@sd < 5M] {
+  stroke: #ffa339;
+  stroke-width: 1;
+  [@sd < 2.5M] {
+    stroke: #ffa339, #ffffff;
+    stroke-width: 4, 3;
+  };
+}
+
+[Type = 'Other road'][@sd < 5M] {
+  stroke: #6a6a6a;
+  stroke-width: 1;
+  [@sd < 2.5M] {
+    stroke: #6a6a6a, #ffffff;
+    stroke-width: 3, 2;
+    z-index: 0, 1;
+  };
+}

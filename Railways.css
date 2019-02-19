@@ -1,0 +1,14 @@
+@styleTitle 'Railway';
+@styleAbstract '';
+
+[@sd < 5M] {
+  stroke: #232323;
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+  [@sd < 2.5M] {
+    stroke: #3e3e3e, #ffffff;
+    stroke-width: 3, 1;
+    stroke-dasharray: 1 0, 5 5;
+    z-index: 0, 1;
+  };
+}

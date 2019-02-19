@@ -1,0 +1,45 @@
+@styleTitle 'Towns';
+@styleAbstract '';
+
+[@sd < 5M],
+[@sd < 20M and @sd > 10M and Type = 'National capital'] {
+  mark: symbol(circle), symbol(circle);
+  label: [TownName];
+  font-family: 'Noto Sans';
+  font-fill: [
+    recode(Type,
+      'Other sttlements', '#555',
+      'Town', '#555',
+      'City', '#222',
+      'National capital', '#000'
+    )
+    ];
+  font-weight: bold;
+  font-size: [
+    recode(Type,
+      'Other sttlements', 10,
+      'Town', 10,
+      'City', 12,
+      'National capital', 14
+    )
+    ];
+  halo-color: #fefefe;
+  halo-radius: 1;
+  halo-opacity: 0.7;
+  label-anchor: 0.5 1;
+  label-offset: 0 -12;
+  :mark {
+    stroke: #333, none;
+    fill: none, #000;
+    stroke-width: 1.5;
+    size: [
+      recode(Type,
+        'Other sttlements', 5.5,
+        'Town', 6,
+        'City', 7.5,
+        'National capital', 10
+      )
+      ], 2;
+  };
+}
+

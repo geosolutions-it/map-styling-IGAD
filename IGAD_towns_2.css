@@ -1,0 +1,19 @@
+@styleTitle 'Towns';
+@styleAbstract '';
+
+* {
+  mark: symbol(triangle);
+  label: [TownName];
+  font-family: 'Noto Sans';
+  font-fill: #b3b3b3;
+  font-size: 10;
+  halo-color: #333333;
+  halo-radius: 0.5;
+  label-anchor: 0.5 1;
+  label-offset: 0 -12;
+  :mark {
+    stroke: #8b8b8b;
+    stroke-width: 2;
+    size: 10;
+  };
+}

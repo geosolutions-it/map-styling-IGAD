@@ -1,0 +1,34 @@
+@styleTitle 'Fiber Optic Under Sea';
+@styleAbstract '';
+
+[@sd > 3M] {
+  stroke: [
+    interpolate(Capacity_G, 0, '#ff00ff', 4000, '#00ffff', 'color')
+    ], symbol(circle);
+  stroke-width: [
+    interpolate(Capacity_G, 0, 0.5, 5000, 4)
+    ];
+  stroke-opacity: 0.40;
+  stroke-linejoin: round;
+  stroke-dasharray: none, 5 5;
+
+  :stroke {
+    stroke: [
+      interpolate(Capacity_G, 0, '#ff00ff', 4000, '#00ffff', 'color')
+      ];
+    size: [
+      interpolate(Capacity_G, 0, 2, 5000, 5)
+      ];
+  };
+  [@sd < 20M] {
+    label: [Name];
+    font-family: 'Noto Sans';
+    font-fill: #ffffff;
+    font-weight: bold;
+    halo-color: #000011;
+    halo-opacity: 0.7;
+    halo-radius: 2;
+    label-anchor: 0.5 1.0;
+    label-offset: 0 -15;
+  };
+}

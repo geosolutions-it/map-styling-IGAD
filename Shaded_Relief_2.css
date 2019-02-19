@@ -1,0 +1,11 @@
+@styleTitle 'Normals';
+@styleAbstract '';
+
+[@sd > 3M] {
+  raster-channels: auto;
+  raster-color-map:
+    color-map-entry(#ff00ff, 0)
+    color-map-entry(#00ffff, 150)
+    color-map-entry(#00ffff, 150)
+    color-map-entry(#ff00ff, 250);
+}
