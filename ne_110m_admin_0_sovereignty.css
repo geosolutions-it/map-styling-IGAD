@@ -1,4 +1,4 @@
-@styleTitle 'Countries';
+@styleTitle 'Country';
 @styleAbstract '';
 
 [ADM0_A3 in (
@@ -10,23 +10,92 @@
   'DJI',
   'ERI',
   'SDN',
-  'SDS',
-  'TZA'
+  'SDS'
 )] {
-
-  [@sd > 20M] {
+  [@sd > 20M][@sd < 50M] {
     fill: url('file://flags/${ADM0_A3}_1x1.svg');
     fill-mime: 'image/svg';
-    fill-size: 50;
+    fill-size: 100;
     graphic-margin: -2;
+    [ADM0_A3 = 'ETH'] {
+      fill-size: 200;
+    };
+    [ADM0_A3 = 'KEN'] {
+      fill-size: 150;
+    };
+    [ADM0_A3 = 'ERI'] {
+      fill-size: 150;
+    };
+    [ADM0_A3 = 'UGA'] {
+      fill-size: 150;
+    };
+    [ADM0_A3 = 'SDN'] {
+      fill-size: 230;
+    };
+    [ADM0_A3 = 'SDS'] {
+      fill-size: 210;
+    };
   };
+
+  [@sd <= 20M][@sd > 10M] {
+    fill: #ffffff;
+    /* fill-opacity: 0.2;*/
+    stroke: #6f80be;
+    stroke-opacity: 0.5;
+    stroke-dasharray: 5 5;
+
+    fill: symbol('shape://dot');
+    fill-random: grid;
+    fill-random-tile-size: 50;
+    fill-random-symbol-count: 500;
+    fill-random-rotation: free;
+    :fill {
+      size: 10;
+      stroke-width: 4;
+      stroke: [categorize(POP_EST,
+        '#000000',
+        2.5M,
+        '#762a83',
+        5M,
+        '#3288bd',
+        10M,
+        '#ffffbf',
+        25M,
+        '#fee08b',
+        50M,
+        '#fc8d59',
+        100M,
+        '#d53e4f'
+      )];
+
+    };
+
+    [POP_EST > 2.5M] {
+      fill-random-symbol-count: 10;
+
+    };
+    [POP_EST > 5M] {
+      fill-random-symbol-count: 40;
+    };
+    [POP_EST > 10M] {
+      fill-random-symbol-count: 50;
+    };
+    [POP_EST > 25M] {
+      fill-random-symbol-count: 100;
+    };
+    [POP_EST > 50M] {
+      fill-random-symbol-count: 500;
+    };
+    [POP_EST > 100M] {
+      fill-random-symbol-count: 1000;
+
+    };
+  };
+
   [@sd < 20M] {
     stroke: #6f80be;
-    stroke-width: 2;
-    stroke-opacity: 0.4;
-    stroke-dasharray: 5;
-    fill: #ffffff;
-    fill-opacity: 0.2;
+    stroke-opacity: 0.5;
+    stroke-dasharray: 5 5;
     label: [NAME_EN];
     font-fill: #333;
     font-family: 'Noto Sans';
@@ -35,40 +104,5 @@
     halo-color: #ffffff;
     halo-radius: 1;
     halo-opacity: 0.7;
-    [@sd > 10M] {
-      fill: #ffffff, symbol("shape://dot");
-      fill-opacity: 0.5, 1;
-      :fill {
-        size: 10;
-        stroke: #333;
-        stroke-width: 3;
-        stroke-opacity: [
-          interpolate(POP_EST,
-            2500000, 0.2,
-            100000000, 1)
-          ];
-      };
-      fill-random: grid;
-      fill-random-tile-size: 50;
-
-      [POP_EST > 2500000] {
-        fill-random-symbol-count: 10;
-      };
-      [POP_EST > 5000000] {
-        fill-random-symbol-count: 40;
-      };
-      [POP_EST > 10000000] {
-        fill-random-symbol-count: 50;
-      };
-      [POP_EST > 25000000] {
-        fill-random-symbol-count: 100;
-      };
-      [POP_EST > 50000000] {
-        fill-random-symbol-count: 500;
-      };
-      [POP_EST > 100000000] {
-        fill-random-symbol-count: 1000;
-      };
-    };
   };
 }
