@@ -8,6 +8,7 @@ GeoCSS Styling
 - transformation functions https://docs.geoserver.org/latest/en/user/styling/css/examples/transformation.html
 - random patterns https://docs.geoserver.org/latest/en/user/styling/css/examples/randomfills.html
 - css cookbook https://docs.geoserver.org/latest/en/user/styling/css/cookbook/index.html
+- filter/geometry functions https://docs.geoserver.org/stable/en/user/filter/function_reference.html
 
 IGAD Data http://geonode.igad.int/
 
