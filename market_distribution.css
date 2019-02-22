@@ -3,6 +3,24 @@
 
 [@sd < 2M] {
   mark: symbol(square);
+  label: [Name];
+  font-family: 'Noto Sans';
+  font-size: 10;
+  font-fill: #ffffff;
+  font-weight: bold;
+  halo-color: [recode(Type,
+    'Primary', '#7570b3',
+    'Secondary', '#d95f02',
+    'Open bush', '#1b9e77'
+  )];
+  halo-radius: 2;
+  label-anchor: 0.5 0.5;
+  [Type = 'Primary'] {
+    label-offset: 0 20;
+  };
+  [Type <> 'Primary'] {
+    label-offset: 0 12;
+  };
   :mark {
     stroke: [recode(Type,
       'Primary', '#7570b3',
@@ -15,10 +33,9 @@
       'Open bush', '#1b9e77'
     )];
     size: [recode(Type,
-      'Primary', 15,
-      'Secondary', 10,
-      'Open bush', 5
+      'Primary', 30,
+      'Secondary', 15,
+      'Open bush', 10
     )];
   };
 }
-
